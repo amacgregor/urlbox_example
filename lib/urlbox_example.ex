@@ -3,16 +3,9 @@ defmodule UrlboxExample do
   Documentation for `UrlboxExample`.
   """
 
-  @doc """
-  Hello world.
+  def take_screenshot(url, options \\ [format: "png"]) do
+    {:ok, screenshot} = ExUrlbox.get(url, options)
 
-  ## Examples
-
-      iex> UrlboxExample.hello()
-      :world
-
-  """
-  def hello do
-    :world
+    screenshot.url
   end
 end
